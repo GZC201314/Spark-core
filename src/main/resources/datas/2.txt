@@ -1,0 +1,4 @@
+Hello Scala
+Hello Bigdata
+Hello Java
+Hello Hadoop
