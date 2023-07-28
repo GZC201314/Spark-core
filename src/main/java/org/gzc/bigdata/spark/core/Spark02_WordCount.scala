@@ -7,7 +7,7 @@ object Spark02_WordCount {
   def main(args: Array[String]): Unit = {
     /* 1.建立和Sapark框架的连接*/
 
-    val sparkConf = new SparkConf().setMaster("local").setAppName("WordCount");
+    val sparkConf = new SparkConf().setMaster("local[0]").setAppName("WordCount");
     val context = new SparkContext(sparkConf);
 
     /* 2.执行业务操作*/
@@ -39,7 +39,7 @@ object Spark02_WordCount {
     }
     //输出结果
     val tuples = wordToCount.collect()
-    tuples.foreach(println)
+//    tuples.foreach(println)
     /* 3.关闭连接*/
     context.stop();
   }

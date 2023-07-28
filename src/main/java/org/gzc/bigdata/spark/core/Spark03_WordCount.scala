@@ -16,6 +16,7 @@ object Spark03_WordCount {
     val lines:RDD[String] = context.textFile("src/main/resources/datas")
     //split 行数据
 
+
     val words:RDD[String] = lines.flatMap(_.split(" "))
 
     //将数据根据单词进行分组
