@@ -1,4 +1,4 @@
-package org.gzc.bigdata.spark.javaCore;
+package org.gzc.bigdata.spark.javacore;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
