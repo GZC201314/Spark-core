@@ -10,6 +10,10 @@ import java.util.Properties;
 
 public class JdbcTest {
     public static void main(String[] args) {
+        jdbcTest();
+    }
+
+    private static void jdbcTest() {
         SparkSession spark = SparkSession.builder()
                 .appName("MyApp")
                 .master("local")
@@ -22,9 +26,7 @@ public class JdbcTest {
         properties.setProperty("driver", "com.mysql.cj.jdbc.Driver");
 
         Dataset<Row> jdbc = spark.read().jdbc(url, table, properties);
-        List<Row> rows = jdbc.collectAsList();
-        for (Row row : rows) {
-            System.out.println(row.json());
-        }
+        jdbc.write().json("hdfs://localhost:9000/user/bsfit/data/user.json");
+
     }
 }

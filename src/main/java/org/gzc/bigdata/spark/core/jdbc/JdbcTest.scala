@@ -16,8 +16,6 @@ class JdbcTest {
     val properties = new Properties()
     properties.put("user", "root")
     properties.put("password", "GZCabc123")
-    SparkSession
-    val df = spark.read.jdbc(url, table, properties)
   }
 
 
